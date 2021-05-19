@@ -1,25 +1,18 @@
 // import './sass/main.scss';
+import fetchCountries from './js/fetchCountries';
+// import createCountryCards from './templates/countryTpl.hbs';
 import _ from 'lodash';
 
 const refs = {
   input: document.querySelector('#input'),
+  countries: document.querySelector('.countries'),
 };
 
 function log() {
-  const inputCountry = refs.input.value;
-  console.log(inputCountry);
+  const searchQuery = refs.input.value;
+  console.log(searchQuery);
 
-  fetch(`https://restcountries.eu/rest/v2/name/${inputCountry}`)
-    .then(response => {
-      return response.json();
-    })
-    .then(country => {
-      console.log(country);
-      console.log(country.length);
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  fetchCountries(searchQuery);
 }
 
 refs.input.addEventListener('input', _.debounce(log, 500));
