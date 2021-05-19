@@ -17,6 +17,7 @@ function fetchCountries(inputValue) {
 }
 
 console.log(fetchCountries(inputValue));
+
 // fetchCountries(inputValue);
 
 function renderMarkup(country) {
