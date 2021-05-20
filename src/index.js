@@ -8,9 +8,10 @@ const refs = {
 };
 
 function showCountries() {
-  fetchCountriesByName(refs.input.value)
-    .then(renderCountryCard)
-    .catch(error => console.log('error', error));
+  fetchCountriesByName(refs.input.value).then(renderCountryCard);
+  // .catch(error => {
+  //   console.log(error, 'error');
+  // }
 }
 
 refs.input.addEventListener('input', _.debounce(showCountries, 500));
