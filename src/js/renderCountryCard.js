@@ -1,3 +1,4 @@
+import { toManyMatches } from './notifications';
 import createCountryCardsMarkup from './createCountryCardsMarkup';
 
 const refs = {
@@ -5,9 +6,8 @@ const refs = {
 };
 
 export default function renderCountryCard(country) {
-  // console.log(country.length);
   if (country.length > 10) {
-    alert('Too many matches found. Please enter a more specific query');
+    toManyMatches();
     return;
   }
   const countriesMarkup = createCountryCardsMarkup(country);
