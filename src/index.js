@@ -1,29 +1,16 @@
 import './css/style.css';
-// import fetchCountries from './js/fetchCountries';
-import countryTpl from './templates/countryTpl.hbs';
+import fetchCountriesByName from './js/fetchCountriesByName';
+import renderCountryCard from './js/renderCountryCard';
 import _ from 'lodash';
 
 const refs = {
   input: document.querySelector('.input'),
-  countries: document.querySelector('.countries'),
 };
 
-function createCountryCardsMarkup(country) {
-  return countryTpl(country);
+function showCountries() {
+  fetchCountriesByName(refs.input.value)
+    .then(renderCountryCard)
+    .catch(error => console.log('error', error));
 }
 
-function fetchCountries() {
-  fetch(`https://restcountries.eu/rest/v2/name/${refs.input.value}`)
-    .then(response => {
-      return response.json();
-    })
-    .then(country => {
-      const countriesMarkup = createCountryCardsMarkup(country);
-      refs.countries.innerHTML = countriesMarkup;
-    })
-    .catch(error => {
-      console.log('error', error);
-    });
-}
-
-refs.input.addEventListener('input', _.debounce(fetchCountries, 500));
+refs.input.addEventListener('input', _.debounce(showCountries, 500));
