@@ -1,5 +1,5 @@
 import countryTpl from '../templates/countryTpl.hbs';
 
-export function createCountryCards(country) {
+function createCountryCardsMarkup(country) {
   return countryTpl(country);
 }
