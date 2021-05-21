@@ -1,5 +1,6 @@
 import { toManyMatches } from './notifications';
 import createCountryCardsMarkup from './createCountryCardsMarkup';
+import clearMarkup from './clearMarkup';
 
 const refs = {
   countries: document.querySelector('.countries'),
@@ -7,6 +8,7 @@ const refs = {
 
 export default function renderCountryCard(country) {
   if (country.length > 10) {
+    clearMarkup();
     toManyMatches();
     return;
   }
