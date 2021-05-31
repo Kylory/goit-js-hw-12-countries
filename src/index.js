@@ -10,9 +10,14 @@ const refs = {
   input: document.querySelector('.input'),
 };
 
-function showCountries() {
+async function showCountries() {
   if (refs.input.value) {
-    fetchCountriesByName(refs.input.value).then(renderCountryCard);
+    try {
+      const countries = await fetchCountriesByName(refs.input.value);
+      return renderCountryCard(countries);
+    } catch (error) {
+      console.log(error);
+    }
   } else clearMarkup();
 }
 
