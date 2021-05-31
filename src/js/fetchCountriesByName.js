@@ -11,3 +11,24 @@ export default function fetchCountriesByName(searchQuery) {
     }
   });
 }
+
+// export default async function fetchCountriesByName(searchQuery) {
+//   try {
+//     const response = await fetch(`https://restcountries.eu/rest/v2/names/${searchQuery}`);
+//     if (response.ok) {
+//       const result = await response.json();
+//       return result;
+//     } else {
+//       clearMarkup();
+//       countryNotFound();
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// export default async function fetchCountriesByName(searchQuery) {
+//   const response = await fetch(`https://restcountries.eu/rest/v2/name/${searchQuery}`);
+//   const result = await response.json();
+//   return result;
+// }

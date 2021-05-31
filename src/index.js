@@ -4,6 +4,8 @@ import renderCountryCard from './js/renderCountryCard';
 import _ from 'lodash';
 import clearMarkup from './js/clearMarkup';
 
+// import 'regenerator-runtime/runtime';
+
 const refs = {
   input: document.querySelector('.input'),
 };
