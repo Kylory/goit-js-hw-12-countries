@@ -1,8 +1,8 @@
 import './css/style.css';
-import fetchCountriesByName from './js/fetchCountriesByName';
-import renderCountryCard from './js/renderCountryCard';
+import { fetchCountriesByName } from './js/fetchCountriesByName';
+import { renderCountryCard } from './js/renderCountryCard';
 import _ from 'lodash';
-import clearMarkup from './js/clearMarkup';
+import { clearMarkup } from './js/clearMarkup';
 
 // import 'regenerator-runtime/runtime';
 

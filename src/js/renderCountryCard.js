@@ -6,7 +6,7 @@ const refs = {
   countries: document.querySelector('.countries'),
 };
 
-export default function renderCountryCard(country) {
+const renderCountryCard = country => {
   if (country.length > 10) {
     clearMarkup();
     toManyMatches();
@@ -14,4 +14,6 @@ export default function renderCountryCard(country) {
   }
   const countriesMarkup = createCountryCardsMarkup(country);
   refs.countries.innerHTML = countriesMarkup;
-}
+};
+
+export { renderCountryCard };
